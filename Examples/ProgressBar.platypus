@@ -48,7 +48,7 @@ sleep 1
 echo &quot;And now for something completely different&quot;
 echo &quot;PROGRESS:70&quot;
 sleep 1
-echo &quot;Quitting application in 2 seconds&quot;
+echo &quot;Closeting application in 2 seconds&quot;
 sleep 2
 echo &quot;QUITAPP&quot;
 echo &quot;PROGRESS:80&quot;

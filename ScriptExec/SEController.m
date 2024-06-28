@@ -544,7 +544,7 @@ static const NSInteger detailsHeight = 224;
 - (void)initialiseInterface {
     
     // Put application name into the relevant menu items
-    [quitMenuItem setTitle:[NSString stringWithFormat:@"Quit %@", appName]];
+    [quitMenuItem setTitle:[NSString stringWithFormat:@"Close %@", appName]];
     [aboutMenuItem setTitle:[NSString stringWithFormat:@"About %@", appName]];
     [hideMenuItem setTitle:[NSString stringWithFormat:@"Hide %@", appName]];
     
@@ -669,8 +669,8 @@ static const NSInteger detailsHeight = 224;
             [statusItemMenu setDelegate:self];
             [statusItem setMenu:statusItemMenu];
             
-            // Create Quit menu item
-            NSMenuItem *menuItem = [[NSMenuItem alloc] initWithTitle:[NSString stringWithFormat:@"Quit %@", appName] action:@selector(terminate:) keyEquivalent:@""];
+            // Create Close menu item
+            NSMenuItem *menuItem = [[NSMenuItem alloc] initWithTitle:[NSString stringWithFormat:@"Close %@", appName] action:@selector(terminate:) keyEquivalent:@""];
             [statusItemMenu insertItem:menuItem atIndex:0];
             [statusItemMenu insertItem:[NSMenuItem separatorItem] atIndex:0];
             [statusItem setEnabled:YES];
@@ -781,7 +781,7 @@ static const NSInteger detailsHeight = 224;
         case PlatypusInterfaceType_TextWindow:
         {
             // Update controls for text window
-            [textWindowCancelButton setTitle:@"Quit"];
+            [textWindowCancelButton setTitle:@"Close"];
             [textWindowCancelButton setEnabled:YES];
             [textWindowProgressIndicator stopAnimation:self];
         }
@@ -806,14 +806,14 @@ static const NSInteger detailsHeight = 224;
             [progressBarIndicator stopAnimation:self];
             
             // Change button
-            [progressBarCancelButton setTitle:@"Quit"];
+            [progressBarCancelButton setTitle:@"Close"];
             [progressBarCancelButton setEnabled:YES];
         }
             break;
             
         case PlatypusInterfaceType_WebView:
         {
-            [webViewCancelButton setTitle:@"Quit"];
+            [webViewCancelButton setTitle:@"Close"];
             [webViewCancelButton setEnabled:YES];
             [webViewProgressIndicator stopAnimation:self];
         }
@@ -1360,7 +1360,7 @@ static const NSInteger detailsHeight = 224;
         [task terminate];
     }
     
-    if ([[sender title] isEqualToString:@"Quit"]) {
+    if ([[sender title] isEqualToString:@"Close"]) {
         [[NSApplication sharedApplication] terminate:self];
     }
 }
