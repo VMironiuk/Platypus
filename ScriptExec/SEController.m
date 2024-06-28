@@ -796,7 +796,8 @@ static const NSInteger detailsHeight = 224;
                 // Cleanup - if the script didn't give us a proper status message, then we set one
                 NSString *msg = [progressBarMessageTextField stringValue];
                 if ([msg isEqualToString:@""] || [msg isEqualToString:@"\n"] || [msg isEqualToString:@"Running..."]) {
-                    [progressBarMessageTextField setStringValue:@"Task completed"];
+                  [progressBarMessageTextField setStringValue:@"Error: Admin access required"];
+                  [progressBarTextView setString:@"Admin access required. Please restart the app and enter your password"];
                 }
                 [progressBarIndicator setIndeterminate:NO];
                 [progressBarIndicator setDoubleValue:100];
