@@ -601,15 +601,7 @@ static const NSInteger detailsHeight = 224;
             [progressBarIndicator setUsesThreadedAnimation:YES];
             
             // Prepare window
-            [progressBarWindow setTitle:appName];
-            
-            if ([DEFAULTS boolForKey:ScriptExecDefaultsKey_ShowDetails]) {
-                NSRect frame = [progressBarWindow frame];
-                frame.origin.y += detailsHeight;
-                [progressBarWindow setFrame:frame display:NO];
-                [self showDetails];
-            }
-            
+            [progressBarWindow setTitle:appName];            
             [progressBarWindow makeKeyAndOrderFront:self];
         }
             break;
